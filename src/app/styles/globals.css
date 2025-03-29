@@ -1,0 +1,7 @@
+/* src/app/styles/globals.css */
+
+/* Diese Direktiven injizieren die Basis-, Komponenten- und Utility-Styles von Tailwind. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
