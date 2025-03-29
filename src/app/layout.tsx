@@ -30,20 +30,21 @@ export const metadata: Metadata = {
 		description: "Ihr zuverlässiger Logistikpartner in Stuttgart.",
 		url: "https://hsc-transporte.de",
 		siteName: "HSC Transporte",
-		// images: [ // Bild für Social Media Sharing hinzufügen
-		//   {
-		//     url: '/images/og-image.jpg',
-		//     width: 1200,
-		//     height: 630,
-		//   },
-		// ],
+		images: [
+			// Bild für Social Media Sharing hinzufügen
+			{
+				url: "/images/hsc-whyus.png",
+				width: 1000,
+				height: 830
+			}
+		],
 		locale: "de_DE",
 		type: "website"
 	}
 };
 
 export const viewport: Viewport = {
-	themeColor: "#ffffff" // Beispiel Theme-Farbe
+	themeColor: "#0000A0" // Beispiel Theme-Farbe
 };
 
 export default function RootLayout({

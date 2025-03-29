@@ -59,7 +59,7 @@ const WhyUsSection = () => {
 					{/* Ersetze durch ein passendes Bild */}
 					<div className="sm:px-6 lg:px-0">
 						<Image
-							src="/images/placeholder-whyus.jpg" // Platzhalter!
+							src="/images/hsc-whyus.png" // Platzhalter!
 							alt="Zuverlässiger Transport durch HSC Transporte"
 							width={1000}
 							height={800}

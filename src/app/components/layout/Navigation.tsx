@@ -9,6 +9,7 @@ export const navItems = [
 	{ label: "Start", href: "/" },
 	{ label: "Leistungen", href: "/leistungen" },
 	{ label: "Über Uns", href: "/ueber-uns" },
+	{ label: "Preisanfrage", href: "/preisanfrage" },
 	{ label: "Kontakt", href: "/kontakt" }
 ];
 

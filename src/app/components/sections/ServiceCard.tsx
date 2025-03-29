@@ -14,11 +14,11 @@ import { ArrowRight, type LucideIcon } from "lucide-react"; // Beispiel Icon
 interface ServiceCardProps {
 	title: string;
 	description: string;
-	link: string;
+	slug: string;
 	Icon?: LucideIcon; // Icon als Komponente übergeben
 }
 
-const ServiceCard = ({ title, description, link, Icon }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, slug, Icon }: ServiceCardProps) => {
 	return (
 		<Card className="flex flex-col h-full">
 			<CardHeader>
@@ -30,7 +30,7 @@ const ServiceCard = ({ title, description, link, Icon }: ServiceCardProps) => {
 			</CardContent>
 			<CardFooter>
 				<Button asChild variant="link" className="p-0 h-auto">
-					<Link href={link}>
+					<Link href={`/leistungen/${slug}`}>
 						Mehr erfahren <ArrowRight className="ml-2 h-4 w-4" />
 					</Link>
 				</Button>

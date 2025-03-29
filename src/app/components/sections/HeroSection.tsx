@@ -13,7 +13,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({
-	title = "Ihr Moderner Logistikpartner im Raum Stuttgart",
+	title = "Ihr Logistikpartner im Raum Stuttgart",
 	subtitle = "Zuverlässige und flexible Transportlösungen für Ihr Unternehmen. Pünktlich, effizient und maßgeschneidert.",
 	ctaPrimaryText = "Unverbindliche Anfrage",
 	ctaPrimaryLink = "/kontakt",

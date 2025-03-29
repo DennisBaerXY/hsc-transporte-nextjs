@@ -1,38 +1,6 @@
 // src/app/components/sections/ServicesOverview.tsx
 import ServiceCard from "./ServiceCard";
-import { Truck, Box, Warehouse, Zap } from "lucide-react"; // Beispiel Icons
-
-// Beispiel-Daten (später ggf. aus CMS oder lib/data.ts)
-const services = [
-	{
-		title: "Express- & Sonderfahrten",
-		description:
-			"Wenn es schnell gehen muss: Deutschland- und europaweite Direktfahrten für Ihre eiligen Sendungen.",
-		link: "/leistungen/expressfahrten",
-		Icon: Zap
-	},
-	{
-		title: "Teil- & Komplettladungen",
-		description:
-			"Effizienter Transport Ihrer Waren, ob als Teilladung (LTL) oder Komplettladung (FTL), regional und national.",
-		link: "/leistungen/ladungen",
-		Icon: Truck
-	},
-	{
-		title: "Lagerlogistik",
-		description:
-			"Flexible Lagermöglichkeiten und Zusatzleistungen für Ihre Waren in unserem Lager bei Stuttgart.",
-		link: "/leistungen/lagerlogistik",
-		Icon: Warehouse
-	},
-	{
-		title: "Individuelle Lösungen",
-		description:
-			"Wir entwickeln passgenaue Logistikkonzepte, die exakt auf die Bedürfnisse Ihres Unternehmens zugeschnitten sind.",
-		link: "/kontakt",
-		Icon: Box
-	}
-];
+import { coreServices } from "@/lib/data/services";
 
 const ServicesOverview = () => {
 	return (
@@ -52,7 +20,7 @@ const ServicesOverview = () => {
 				</div>
 
 				<div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-					{services.map((service) => (
+					{coreServices.map((service) => (
 						<ServiceCard key={service.title} {...service} />
 					))}
 				</div>

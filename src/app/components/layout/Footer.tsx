@@ -79,24 +79,24 @@ const Footer = () => {
 						<address className="not-italic text-sm space-y-1">
 							HSC Transporte
 							<br />
-							[Ihre Straße + Nr.]
+							Hölderlinstraße 4
 							<br />
-							[Ihre PLZ] Stuttgart
+							70794 Filderstadt
 							<br />
 							Tel:{" "}
 							<a
-								href="tel:+49711XXXXXX"
+								href="tel:+491775104005"
 								className="hover:text-primary transition-colors"
 							>
-								[Ihre Telefonnummer]
+								0177 - 510 4005
 							</a>
 							<br />
-							Mail:{" "}
+							Mail:
 							<a
 								href="mailto:info@hsc-transporte.de"
-								className="hover:text-primary transition-colors"
+								className="text-primary hover:underline"
 							>
-								[Ihre E-Mail-Adresse]
+								info@hsc-transporte.de
 							</a>
 						</address>
 					</div>

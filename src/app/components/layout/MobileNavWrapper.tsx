@@ -11,7 +11,7 @@ import {
 	SheetTrigger
 } from "@/components/ui/sheet";
 import { Menu, X, Phone } from "lucide-react"; // Icons
-import Navigation from "./Navigation"; // Importiere navItems direkt
+import Navigation, { navItems } from "./Navigation"; // Importiere navItems direkt
 import Link from "next/link";
 
 const MobileNavWrapper = () => {
@@ -32,13 +32,8 @@ const MobileNavWrapper = () => {
 							<span className="font-bold text-lg">HSC Transporte</span>
 						</Link>
 					</SheetTitle>
-					<Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
-						<X className="h-6 w-6" />
-						<span className="sr-only">Menü schließen</span>
-					</Button>
 				</SheetHeader>
-				<div className="mt-6 flex flex-col space-y-4">
-					{/* Hier die Navigation mit vertikalem Layout einfügen */}
+				<div className="mt-6 mx-5 flex flex-col space-y-4">
 					<Navigation
 						className="flex-col space-x-0 space-y-3 items-start"
 						linkClassName="text-lg text-foreground"

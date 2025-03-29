@@ -10,8 +10,9 @@ export default function HomePage() {
 	return (
 		<>
 			<HeroSection />
-			<ServicesOverview />
 			<WhyUsSection />
+			<ServicesOverview />
+
 			<CtaSection />
 			{/* Weitere Abschnitte hier */}
 		</>
