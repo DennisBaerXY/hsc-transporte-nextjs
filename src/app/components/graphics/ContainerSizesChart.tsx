@@ -103,7 +103,7 @@ const ContainerSizesChart = () => {
 					textAnchor="middle"
 					fill="#1e3a8a"
 				>
-					20' Standard
+					20&apos; Standard
 				</text>
 				<text
 					x="175"
@@ -148,7 +148,7 @@ const ContainerSizesChart = () => {
 					textAnchor="middle"
 					fill="#1e3a8a"
 				>
-					40' Standard
+					40&apos; Standard
 				</text>
 				<text
 					x="450"
@@ -193,7 +193,7 @@ const ContainerSizesChart = () => {
 					textAnchor="middle"
 					fill="#1e3a8a"
 				>
-					45'
+					45&apos;
 				</text>
 				<text
 					x="700"

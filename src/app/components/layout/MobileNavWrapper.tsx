@@ -10,8 +10,8 @@ import {
 	SheetTitle,
 	SheetTrigger
 } from "@/components/ui/sheet";
-import { Menu, X, Phone } from "lucide-react"; // Icons
-import Navigation, { navItems } from "./Navigation"; // Importiere navItems direkt
+import { Menu, Phone } from "lucide-react"; // Icons
+import Navigation from "./Navigation"; // Importiere navItems direkt
 import Link from "next/link";
 
 const MobileNavWrapper = () => {
