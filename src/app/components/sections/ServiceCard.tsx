@@ -30,7 +30,7 @@ const ServiceCard = ({ title, description, slug, Icon }: ServiceCardProps) => {
 			</CardContent>
 			<CardFooter>
 				<Button asChild variant="link" className="p-0 h-auto">
-					<Link href={`/leistungen/${slug}`}>
+					<Link href={`/leistungen`}>
 						Mehr erfahren <ArrowRight className="ml-2 h-4 w-4" />
 					</Link>
 				</Button>

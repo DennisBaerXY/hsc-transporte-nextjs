@@ -2,8 +2,7 @@
 "use client";
 
 import { useState } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+
 import * as z from "zod";
 
 import { Button } from "@/components/ui/button";
@@ -27,6 +26,8 @@ import {
 	SelectTrigger,
 	SelectValue
 } from "@/components/ui/select"; // Select für Container
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 // Erweitertes Schema für Preisanfrage
 const quoteFormSchema = z.object({
@@ -42,7 +43,10 @@ const quoteFormSchema = z.object({
 	}),
 	transportType: z.string({ required_error: "Bitte Transportart auswählen." }), // Oneway, Rundlauf, Shuttle?
 	desiredDate: z.string().optional(), // Optionales Datum
-	weightKg: z.number().positive().optional(), // Optionales Gewicht
+	weightKg: z
+		.string()
+		.transform((val) => (val === "" ? undefined : Number(val)))
+		.pipe(z.number().positive({ message: "Gewicht benötigt" })),
 	remarks: z.string().optional(), // Zusätzliche Bemerkungen
 
 	// Kontaktdaten (ähnlich wie ContactForm)
@@ -83,10 +87,12 @@ export default function QuoteRequestForm() {
 		defaultValues: {
 			startLocation: "",
 			endLocation: "",
-			// containerType: undefined, // Wird durch Select gesteuert
-			// transportType: undefined,
+			containerType: undefined, // Wird durch Select gesteuert
+			transportType: undefined,
 			desiredDate: "",
-			// weightKg: undefined,
+
+			// @ts-ignore
+			weightKg: "",
 			remarks: "",
 			firstName: "",
 			lastName: "",
@@ -238,7 +244,7 @@ export default function QuoteRequestForm() {
 						name="weightKg"
 						render={({ field }) => (
 							<FormItem>
-								<FormLabel>Gewicht (ca. in kg)</FormLabel>
+								<FormLabel>Gewicht (ca. in kg)*</FormLabel>
 								<FormControl>
 									<Input
 										type="number"

@@ -16,7 +16,7 @@ const HeroSection = ({
 	title = "Ihr Logistikpartner im Raum Stuttgart",
 	subtitle = "Zuverlässige und flexible Transportlösungen für Ihr Unternehmen. Pünktlich, effizient und maßgeschneidert.",
 	ctaPrimaryText = "Unverbindliche Anfrage",
-	ctaPrimaryLink = "/kontakt",
+	ctaPrimaryLink = "/preisanfrage",
 	ctaSecondaryText = "Unsere Leistungen",
 	ctaSecondaryLink = "/leistungen",
 	backgroundImageUrl

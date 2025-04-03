@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import QuoteRequestForm from "../components/sections/QuoteRequestForm"; // Neue Komponente erstellen!
 
 export const metadata: Metadata = {
-	title: "Preisanfrage Container Transport",
+	title: "Preisanfrage",
 	description:
 		"Fragen Sie jetzt unverbindlich die Kosten für Ihren Containertransport im Raum Stuttgart bei HSC Transporte an. Füllen Sie das Formular für ein individuelles Angebot aus."
 };

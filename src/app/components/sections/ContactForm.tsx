@@ -87,22 +87,28 @@ export default function ContactForm() {
 
 	return (
 		<Form {...form}>
-			<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+			<form
+				onSubmit={form.handleSubmit(onSubmit)}
+				className="space-y-4 md:space-y-6"
+			>
 				{/* Name */}
 				<FormField
 					control={form.control}
 					name="name"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Firma / Name*</FormLabel>
+							<FormLabel className="text-sm md:text-base">
+								Firma / Name*
+							</FormLabel>
 							<FormControl>
 								<Input
 									placeholder="Ihr Name oder Firmenname"
 									{...field}
 									disabled={isLoading}
+									className="text-sm md:text-base h-9 md:h-10"
 								/>
 							</FormControl>
-							<FormMessage />
+							<FormMessage className="text-xs md:text-sm" />
 						</FormItem>
 					)}
 				/>
@@ -112,16 +118,17 @@ export default function ContactForm() {
 					name="email"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>E-Mail*</FormLabel>
+							<FormLabel className="text-sm md:text-base">E-Mail*</FormLabel>
 							<FormControl>
 								<Input
 									type="email"
 									placeholder="ihre@email.de"
 									{...field}
 									disabled={isLoading}
+									className="text-sm md:text-base h-9 md:h-10"
 								/>
 							</FormControl>
-							<FormMessage />
+							<FormMessage className="text-xs md:text-sm" />
 						</FormItem>
 					)}
 				/>
@@ -131,16 +138,17 @@ export default function ContactForm() {
 					name="phone"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Telefon</FormLabel>
+							<FormLabel className="text-sm md:text-base">Telefon</FormLabel>
 							<FormControl>
 								<Input
 									type="tel"
 									placeholder="Ihre Telefonnummer"
 									{...field}
 									disabled={isLoading}
+									className="text-sm md:text-base h-9 md:h-10"
 								/>
 							</FormControl>
-							<FormMessage />
+							<FormMessage className="text-xs md:text-sm" />
 						</FormItem>
 					)}
 				/>
@@ -150,17 +158,19 @@ export default function ContactForm() {
 					name="message"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Ihre Nachricht / Anfrage*</FormLabel>
+							<FormLabel className="text-sm md:text-base">
+								Ihre Nachricht / Anfrage*
+							</FormLabel>
 							<FormControl>
 								<Textarea
 									placeholder="Beschreiben Sie kurz Ihr Anliegen..."
-									className="resize-none"
+									className="resize-none text-sm md:text-base min-h-32"
 									{...field}
-									rows={5}
+									rows={4}
 									disabled={isLoading}
 								/>
 							</FormControl>
-							<FormMessage />
+							<FormMessage className="text-xs md:text-sm" />
 						</FormItem>
 					)}
 				/>
@@ -169,7 +179,7 @@ export default function ContactForm() {
 					control={form.control}
 					name="privacy"
 					render={({ field }) => (
-						<FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+						<FormItem className="flex flex-row items-start space-x-2 md:space-x-3 space-y-0 rounded-md border p-3 md:p-4">
 							<FormControl>
 								<Checkbox
 									checked={field.value}
@@ -178,7 +188,7 @@ export default function ContactForm() {
 								/>
 							</FormControl>
 							<div className="space-y-1 leading-none">
-								<FormLabel>
+								<FormLabel className="text-xs md:text-sm">
 									Ich habe die{" "}
 									<Link
 										href="/datenschutz"
@@ -189,13 +199,17 @@ export default function ContactForm() {
 									</Link>{" "}
 									gelesen und stimme zu.*
 								</FormLabel>
-								<FormMessage />
+								<FormMessage className="text-xs md:text-sm" />
 							</div>
 						</FormItem>
 					)}
 				/>
 
-				<Button type="submit" disabled={isLoading} className="w-full">
+				<Button
+					type="submit"
+					disabled={isLoading}
+					className="w-full h-9 md:h-10 text-sm md:text-base mt-4"
+				>
 					{isLoading ? "Sende..." : "Anfrage absenden"}
 				</Button>
 			</form>

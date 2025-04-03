@@ -22,7 +22,12 @@ export const metadata: Metadata = {
 		"Logistik Stuttgart",
 		"HSC Transporte",
 		"Expressfahrten",
-		"Lagerung"
+		"Lagerung",
+		"Containertransport",
+		"LKW-Transport",
+		"Spedition Kornwestheim",
+		"Kornwestheim",
+		"Filderstadt"
 	],
 	// Weitere Metadaten wie Open Graph hier definieren
 	openGraph: {

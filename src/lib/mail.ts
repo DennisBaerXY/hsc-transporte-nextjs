@@ -15,13 +15,15 @@ const getTransporter = () => {
 		return nodemailer.createTransport({
 			host: "smtp.ethereal.email",
 			port: 587,
-			secure: false,
+
 			auth: {
 				user: process.env.ETHEREAL_EMAIL,
 				pass: process.env.ETHEREAL_PASSWORD
 			}
 		});
 	}
+
+	// mail gun für dev
 
 	// Produktionsumgebung: Verwende die tatsächlichen SMTP-Einstellungen
 	return nodemailer.createTransport({
