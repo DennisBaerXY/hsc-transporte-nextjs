@@ -81,7 +81,7 @@ export default function LeistungenPage() {
 						</div>
 						<div className="relative h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden">
 							<Image
-								src="/images/container-wand.jpg"
+								src="/images/container-wand.webp"
 								alt="HSC Container Transport in Stuttgart"
 								fill
 								className="object-cover"
