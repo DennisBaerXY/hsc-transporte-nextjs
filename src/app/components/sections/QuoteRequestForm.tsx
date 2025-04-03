@@ -45,8 +45,13 @@ const quoteFormSchema = z.object({
 	desiredDate: z.string().optional(), // Optionales Datum
 	weightKg: z
 		.string()
-		.transform((val) => (val === "" ? undefined : Number(val)))
-		.pipe(z.number().positive({ message: "Gewicht benötigt" })),
+		.refine((val) => val !== "", {
+			message: "Bitte Gewicht in kg angeben."
+		})
+		.transform((val) => Number(val))
+		.refine((val) => val > 0, {
+			message: "Gewicht muss positiv sein."
+		}),
 	remarks: z.string().optional(), // Zusätzliche Bemerkungen
 
 	// Kontaktdaten (ähnlich wie ContactForm)
@@ -116,7 +121,7 @@ export default function QuoteRequestForm() {
 
 			if (!response.ok) throw new Error("Fehler beim Senden der Anfrage.");
 
-			toast("Anfrage erfolgreich gesendet!", {
+			toast.success("Anfrage erfolgreich gesendet!", {
 				description:
 					"Vielen Dank, wir erstellen Ihr Angebot und melden uns bald."
 			});
@@ -248,9 +253,10 @@ export default function QuoteRequestForm() {
 								<FormControl>
 									<Input
 										type="number"
+										min={0}
 										placeholder="z.B. 15000"
 										{...field}
-										onChange={(event) => field.onChange(+event.target.value)}
+										onChange={(event) => field.onChange(event.target.value)}
 									/>
 								</FormControl>
 								<FormMessage />
@@ -353,27 +359,30 @@ export default function QuoteRequestForm() {
 					control={form.control}
 					name="privacy"
 					render={({ field }) => (
-						<FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
-							<FormControl>
+						<FormItem className="space-y-2">
+							<div className="flex items-top gap-2">
 								<Checkbox
 									checked={field.value}
 									onCheckedChange={field.onChange}
+									id="privacy-checkbox"
+									className="mt-1"
 								/>
-							</FormControl>
-							<div className="space-y-1 leading-none">
-								<FormLabel>
+								<label
+									htmlFor="privacy-checkbox"
+									className="text-sm cursor-pointer"
+								>
 									Ich habe die{" "}
 									<Link
 										href="/datenschutz"
-										className="text-primary hover:underline"
 										target="_blank"
+										style={{ color: "blue" }}
 									>
 										Datenschutzerklärung
 									</Link>{" "}
 									gelesen und stimme zu.*
-								</FormLabel>
-								<FormMessage />
+								</label>
 							</div>
+							<FormMessage />
 						</FormItem>
 					)}
 				/>

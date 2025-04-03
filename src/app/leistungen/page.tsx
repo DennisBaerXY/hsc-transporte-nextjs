@@ -204,8 +204,10 @@ export default function LeistungenPage() {
 						].map((location, index) => (
 							<Card key={index}>
 								<CardHeader>
-									<div className="mb-2">{location.icon}</div>
-									<CardTitle>{location.title}</CardTitle>
+									<div className="flex gap-x-1.5 items-center">
+										<div>{location.icon}</div>
+										<CardTitle>{location.title}</CardTitle>
+									</div>
 								</CardHeader>
 								<CardContent>
 									<p className="text-muted-foreground">

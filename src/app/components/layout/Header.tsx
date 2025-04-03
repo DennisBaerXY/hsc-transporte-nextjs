@@ -13,8 +13,9 @@ const Header = () => {
 					<Image
 						src="/images/logo-hsc-remade.png"
 						alt="HSC Transporte Logo"
-						width={125}
-						height={75}
+						width={90}
+						height={45}
+						className="h-auto"
 					/>
 					<span className="font-bold text-lg">HSC Transporte</span>
 				</Link>

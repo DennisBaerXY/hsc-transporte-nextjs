@@ -44,11 +44,16 @@ const HeroSection = ({
 				<p className="mt-6 text-lg leading-8 text-muted-foreground">
 					{subtitle}
 				</p>
-				<div className="mt-10 flex items-center justify-center gap-x-6">
-					<Button asChild size="lg">
+				<div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-x-6">
+					<Button asChild size="lg" className="w-3/4 sm:w-auto">
 						<Link href={ctaPrimaryLink}>{ctaPrimaryText}</Link>
 					</Button>
-					<Button asChild variant="outline" size="lg">
+					<Button
+						asChild
+						variant="outline"
+						size="lg"
+						className="w-3/4 sm:w-auto"
+					>
 						<Link href={ctaSecondaryLink}>{ctaSecondaryText}</Link>
 					</Button>
 				</div>
