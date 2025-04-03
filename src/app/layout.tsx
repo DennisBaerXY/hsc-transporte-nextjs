@@ -59,9 +59,9 @@ export default function RootLayout({
 			<body className={`${inter.className} flex flex-col min-h-screen`}>
 				<Header />
 				<main className="flex-grow">{children}</main>
+				<Analytics />
 				<Footer />
 				<Toaster /> {/* Für Formular-Feedback */}
-				<Analytics />{" "}
 				{/* Für Analysen KEIN DSGVO DA KEINE DATEN GESAMMELT WERDEN */}
 			</body>
 		</html>
