@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Inter } from "next/font/google"; // Beispiel Schriftart
 import "./styles/globals.css";
 import Header from "./components/layout/Header";
