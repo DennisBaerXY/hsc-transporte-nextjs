@@ -4,6 +4,7 @@ import "./styles/globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import { Toaster } from "@/components/ui/sonner"; // Für Benachrichtigungen vom Formular
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -48,10 +49,6 @@ export const metadata: Metadata = {
 	}
 };
 
-export const viewport: Viewport = {
-	themeColor: "#0000A0" // Beispiel Theme-Farbe
-};
-
 export default function RootLayout({
 	children
 }: Readonly<{
@@ -64,6 +61,8 @@ export default function RootLayout({
 				<main className="flex-grow">{children}</main>
 				<Footer />
 				<Toaster /> {/* Für Formular-Feedback */}
+				<Analytics />{" "}
+				{/* Für Analysen KEIN DSGVO DA KEINE DATEN GESAMMELT WERDEN */}
 			</body>
 		</html>
 	);

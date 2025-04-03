@@ -179,28 +179,30 @@ export default function ContactForm() {
 					control={form.control}
 					name="privacy"
 					render={({ field }) => (
-						<FormItem className="flex flex-row items-start space-x-2 md:space-x-3 space-y-0 rounded-md border p-3 md:p-4">
-							<FormControl>
+						<FormItem className="space-y-2">
+							<div className="flex items-top gap-2">
 								<Checkbox
 									checked={field.value}
 									onCheckedChange={field.onChange}
-									disabled={isLoading}
+									id="privacy-checkbox"
+									className="mt-1"
 								/>
-							</FormControl>
-							<div className="space-y-1 leading-none">
-								<FormLabel className="text-xs md:text-sm">
+								<label
+									htmlFor="privacy-checkbox"
+									className="text-sm cursor-pointer"
+								>
 									Ich habe die{" "}
 									<Link
 										href="/datenschutz"
-										className="text-blue-600 hover:underline"
 										target="_blank"
+										style={{ color: "blue" }}
 									>
 										Datenschutzerklärung
 									</Link>{" "}
 									gelesen und stimme zu.*
-								</FormLabel>
-								<FormMessage className="text-xs md:text-sm" />
+								</label>
 							</div>
+							<FormMessage />
 						</FormItem>
 					)}
 				/>

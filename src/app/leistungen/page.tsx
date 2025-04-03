@@ -128,7 +128,7 @@ export default function LeistungenPage() {
 										<Badge
 											key={index}
 											variant="outline"
-											className="flex justify-center py-2"
+											className="flex justify-center py-2 w-full"
 										>
 											{size}
 										</Badge>

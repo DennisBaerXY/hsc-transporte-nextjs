@@ -31,6 +31,7 @@ export async function POST(request: Request) {
 		// E-Mail senden mit der importierten sendMail-Funktion
 		await sendMail({
 			to: process.env.CONTACT_FORM_RECEIVER_EMAIL!,
+			replyTo: email,
 			subject: `Neue Kontaktanfrage von ${name} (hsc-transporte.de)`,
 			text: `Neue Anfrage von:\nName: ${name}\nEmail: ${email}\nTelefon: ${
 				phone || "-"
