@@ -29,6 +29,7 @@ export async function POST(request: Request) {
 		const { name, email, phone, message } = validation.data;
 
 		// E-Mail senden mit der importierten sendMail-Funktion
+		// Alle Fehler werden als Exception geworfen und vom catch-Block aufgefangen
 		await sendMail({
 			to: process.env.CONTACT_FORM_RECEIVER_EMAIL!,
 			replyTo: email,
@@ -61,6 +62,7 @@ export async function POST(request: Request) {
       `
 		});
 
+		// Wenn wir hier ankommen, war das Senden erfolgreich
 		return NextResponse.json(
 			{ message: "Nachricht erfolgreich gesendet!" },
 			{ status: 200 }

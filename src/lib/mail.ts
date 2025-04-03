@@ -62,14 +62,15 @@ const getTransporter = () => {
 
 /**
  * Sendet eine E-Mail unter Verwendung des konfigurierten Transporters.
- * Reduziertes Logging im Produktionsbetrieb.
+ * Bei Fehlern wird ein Error geworfen.
  *
  * @param data Die E-Mail-Daten (Empfänger, Betreff, Inhalt, optional replyTo).
- * @returns Ein Promise, das ein Objekt mit `{ success: boolean, messageId?: string, error?: string }` zurückgibt.
+ * @returns Ein Promise, das die Message-ID zurückgibt
+ * @throws Error wenn die E-Mail nicht gesendet werden kann (Konfigurations- oder Sendefehler)
  */
 export async function sendMail(
 	data: EmailPayload
-): Promise<{ success: boolean; messageId?: string; error?: string }> {
+): Promise<{ messageId: string }> {
 	let transporter;
 	try {
 		transporter = getTransporter();
@@ -80,10 +81,7 @@ export async function sendMail(
 			"FEHLER: E-Mail-Transporter konnte nicht erstellt werden:",
 			errorMessage
 		);
-		return {
-			success: false,
-			error: `Konfigurationsfehler des Mailservers: ${errorMessage}`
-		};
+		throw new Error(`Konfigurationsfehler des Mailservers: ${errorMessage}`);
 	}
 
 	const senderEmail = process.env.SMTP_FROM_EMAIL;
@@ -94,10 +92,9 @@ export async function sendMail(
 		console.error(
 			"FEHLER: SMTP_FROM_EMAIL Umgebungsvariable ist nicht gesetzt. E-Mail kann nicht gesendet werden."
 		);
-		return {
-			success: false,
-			error: "Server-Konfigurationsfehler: Absender-E-Mail-Adresse fehlt."
-		};
+		throw new Error(
+			"Server-Konfigurationsfehler: Absender-E-Mail-Adresse fehlt."
+		);
 	}
 
 	const mailOptions = {
@@ -124,7 +121,7 @@ export async function sendMail(
 		}
 		// KEIN Erfolgs-Logging mehr im Produktionsbetrieb
 
-		return { success: true, messageId: info.messageId };
+		return { messageId: info.messageId };
 	} catch (error: unknown) {
 		const errorMessage = error instanceof Error ? error.message : String(error);
 		// Wichtig: Fehler beim Senden immer loggen!
@@ -133,9 +130,6 @@ export async function sendMail(
 			errorMessage,
 			error
 		);
-		return {
-			success: false,
-			error: `Fehler beim Senden der E-Mail: ${errorMessage}`
-		};
+		throw new Error(`Fehler beim Senden der E-Mail: ${errorMessage}`);
 	}
 }
