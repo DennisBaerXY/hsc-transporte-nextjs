@@ -96,7 +96,7 @@ export default function QuoteRequestForm() {
 			transportType: undefined,
 			desiredDate: "",
 
-			// @ts-ignore
+			// @ts-expect-error  // TypeScript erwartet hier einen String, aber wir verwenden ein Select
 			weightKg: "",
 			remarks: "",
 			firstName: "",

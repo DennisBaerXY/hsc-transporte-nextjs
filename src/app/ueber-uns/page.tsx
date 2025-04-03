@@ -1,7 +1,6 @@
 // src/app/ueber-uns/page.tsx
 import { Metadata } from "next";
 
-import WhyUsSection from "../components/sections/WhyUsSection"; // Kann hier wiederverwendet werden
 import { CheckCircle } from "lucide-react";
 import CtaSection from "../components/sections/CtaSection";
 

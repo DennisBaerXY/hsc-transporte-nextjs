@@ -1,6 +1,5 @@
 // lib/mail.ts
 import nodemailer from "nodemailer";
-import type { TransportOptions } from "nodemailer";
 
 // Interface für die E-Mail-Daten, jetzt mit optionalem replyTo
 type EmailPayload = {

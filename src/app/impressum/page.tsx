@@ -1,6 +1,5 @@
 // src/app/impressum/page.tsx
 import { Metadata } from "next";
-import Link from "next/link"; // Import Link for potential internal links
 
 export const metadata: Metadata = {
 	title: "Impressum | HSC Transporte",
@@ -55,7 +54,7 @@ export default function ImpressumPage() {
 					<p className="mb-1">
 						Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
 					</p>
-					{/* TODO: Bitte die USt-IdNr. nochmals auf Korrektheit prüfen. */}
+
 					<p className="font-mono">DE237138918</p>
 				</section>
 
