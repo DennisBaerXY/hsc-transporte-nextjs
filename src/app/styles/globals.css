@@ -8,71 +8,266 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  
+  /* Basis Farben - Professionelles Blau als Hauptfarbe */
+  --background: #ffffff;
+  --foreground: #1a2a4a;
+  
+  /* Karten und Pop-ups */
+  --card: #ffffff;
+  --card-foreground: #1a2a4a;
+  --popover: #ffffff;
+  --popover-foreground: #1a2a4a;
+  
+  /* Primäre Markenfarbe - kräftiges Blau */
+  --primary: #003b7a;
+  --primary-light: #0051a3;
+  --primary-dark: #002b59;
+  --primary-foreground: #ffffff;
+  
+  /* Grau-Töne für seriösen Look */
+  --gray-100: #f7f9fc;
+  --gray-200: #e9ecf2;
+  --gray-300: #d0d7e2;
+  --gray-400: #a3aebf;
+  --gray-500: #7d8a9e;
+  --gray-600: #546478;
+  
+  /* Sekundäre Farbe - gedämpftes Blau */
+  --secondary: #eef2f9;
+  --secondary-foreground: #003b7a;
+  
+  /* Roter Akzent aus dem Logo - nur für Akzente */
+  --accent-red: #cc0000;
+  --accent-red-light: #f8e6e6;
+  --accent-red-dark: #990000;
+  
+  /* Dezente UI-Elemente */
+  --muted: #f2f5fb;
+  --muted-foreground: #526897;
+  
+  /* Akzentfarbe für Hover-Effekte etc. */
+  --accent: #e1ebfa;
+  --accent-foreground: #003b7a;
+  
+  /* Hinweisfarbe für Fehler/Warnungen */
+  --destructive: #d9183b;
+  
+  /* UI-Element-Grenzen */
+  --border: #c4d1e7;
+  --input: #c4d1e7;
+  --ring: #7a96c2;
+  
+  /* Chart-Farben für Visualisierungen */
+  --chart-1: #003b7a;
+  --chart-2: #cc0000;
+  --chart-3: #0072b1;
+  --chart-4: #546478;
+  --chart-5: #007da3;
+  
+  /* Sidebar-Styling */
+  --sidebar: #003b7a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #ffffff;
+  --sidebar-primary-foreground: #003b7a;
+  --sidebar-accent: #002b59;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: rgba(255, 255, 255, 0.5);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.269 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.371 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.439 0 0);
+  --background: #0f1a2e;
+  --foreground: #f2f5fb;
+  
+  --card: #162a47;
+  --card-foreground: #f2f5fb;
+  --popover: #162a47;
+  --popover-foreground: #f2f5fb;
+  
+  /* Primäre Farbe im Dunkelmodus */
+  --primary: #0057b7;
+  --primary-light: #176dc7;
+  --primary-dark: #004595;
+  --primary-foreground: #ffffff;
+  
+  /* Rot im Dunkelmodus */
+  --accent-red: #d92626;
+  --accent-red-light: #320000;
+  --accent-red-dark: #ff4040;
+  
+  --secondary: #1e3251;
+  --secondary-foreground: #f2f5fb;
+  
+  --muted: #182c48;
+  --muted-foreground: #8ba0c9;
+  
+  --accent: #1e3251;
+  --accent-foreground: #f2f5fb;
+  
+  --destructive: #e43f5a;
+  
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #3b6cb3;
+}
+
+/* Klare, professionelle UI-Elemente */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 59, 122, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-light);
+  box-shadow: 0 3px 6px rgba(0, 59, 122, 0.3);
+}
+
+.btn-cta {
+  background-color: var(--accent-red);
+  color: white;
+  border: none;
+  box-shadow: 0 2px 4px rgba(204, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btn-cta:hover {
+  background-color: var(--accent-red-dark);
+  box-shadow: 0 3px 6px rgba(204, 0, 0, 0.3);
+}
+
+.btn-secondary {
+  background-color: var(--gray-200);
+  color: var(--foreground);
+  border: 1px solid var(--gray-300);
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--gray-300);
+}
+
+/* Professionelle Karten */
+.card-professional {
+  border: 1px solid var(--gray-200);
+  border-top: 3px solid var(--primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card-professional:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card-accent {
+  border: 1px solid var(--gray-200);
+  border-top: 3px solid var(--accent-red);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Seriöse Überschriften */
+.heading-underline {
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.heading-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+.heading-underline-center {
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.heading-underline-center::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+/* Dezente Akzentflächen */
+.accent-area {
+  background-color: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+}
+
+.accent-area-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.accent-area-red {
+  background-color: var(--accent-red-light);
+  border-left: 3px solid var(--accent-red);
+}
+
+/* Professionelle Listen */
+ul.check-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+ul.check-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+}
+
+/* Badges */
+.badge-primary {
+  background-color: var(--primary-light);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.badge-secondary {
+  background-color: var(--gray-200);
+  color: var(--gray-600);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.badge-accent {
+  background-color: var(--accent-red-light);
+  color: var(--accent-red);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 500;
 }
 
 @theme inline {

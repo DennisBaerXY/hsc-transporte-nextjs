@@ -1,9 +1,11 @@
+// src/app/layout.tsx
 import type { Metadata } from "next";
-import { Inter } from "next/font/google"; // Beispiel Schriftart
+import { Inter } from "next/font/google";
 import "./styles/globals.css";
+import "./styles/hsc-theme.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
-import { Toaster } from "@/components/ui/sonner"; // Für Benachrichtigungen vom Formular
+import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -56,7 +58,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="de">
-			<body className={`${inter.className} flex flex-col min-h-screen`}>
+			<body
+				className={`${inter.className} flex flex-col min-h-screen bg-white`}
+			>
+				{/* Dezenter Farbstreifen in Logo-Farben */}
+				<div className="h-1 w-full bg-primary"></div>
 				<Header />
 				<main className="flex-grow">{children}</main>
 				<Analytics />
